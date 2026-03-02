@@ -175,7 +175,7 @@ function AuthScreen({ onLogin }) {
         <div style={{textAlign:"center",marginBottom:32}}>
           <div style={{fontSize:44}}>📋</div>
           <h1 style={{fontFamily:"'Space Grotesk',sans-serif",fontSize:28,color:C.text,fontWeight:700}}>AsistenciaApp</h1>
-          <p style={{color:C.muted,fontSize:13,marginTop:6}}>Powered by Supabase ⚡</p>
+          <p style={{color:C.muted,fontSize:13,marginTop:6}}></p>
         </div>
         <div style={{display:"flex",borderBottom:`1px solid ${C.border}`,marginBottom:28}}>
           {["login","register"].map(m=>(
