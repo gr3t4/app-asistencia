@@ -167,14 +167,15 @@ function AuthScreen({ onLogin }) {
   }
 
   return(
-  <div style={{minHeight:"100vh",background:C.bg,display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'DM Sans',sans-serif",padding:"12px"}}>      <GlobalStyles/>
+    <div style={{minHeight:"100vh",background:C.bg,display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'DM Sans',sans-serif",padding:"0"}}>
+      <GlobalStyles/>
       <Glow top="-20%" left="-10%" color="59,130,246"/>
       <Glow bottom="-20%" right="-10%" color="139,92,246"/>
-      <div style={{background:C.card,border:`1px solid ${C.border}`,borderRadius:20,padding:"40px 24px",width:"100%",maxWidth:"95vw",boxShadow:"0 25px 60px rgba(0,0,0,0.4)",position:"relative",zIndex:1,animation:"fadeUp .4s ease both",margin:"0 auto"}}>
+      <div style={{background:C.card,border:"none",borderRadius:0,padding:"40px 28px",width:"100%",maxWidth:"100%",minHeight:"100vh",boxShadow:"none",position:"relative",zIndex:1,animation:"fadeUp .4s ease both",display:"flex",flexDirection:"column",justifyContent:"center"}}>
         <div style={{textAlign:"center",marginBottom:32}}>
           <div style={{fontSize:44}}>📋</div>
           <h1 style={{fontFamily:"'Space Grotesk',sans-serif",fontSize:28,color:C.text,fontWeight:700}}>AsistenciaApp</h1>
-          <p style={{color:C.muted,fontSize:13,marginTop:6}}></p>
+          <p style={{color:C.muted,fontSize:13,marginTop:6}}>Powered by Supabase ⚡</p>
         </div>
         <div style={{display:"flex",borderBottom:`1px solid ${C.border}`,marginBottom:28}}>
           {["login","register"].map(m=>(
@@ -196,7 +197,7 @@ function AuthScreen({ onLogin }) {
         </div>
         <div style={{marginTop:16,textAlign:"center",fontSize:12,color:C.muted}}>
   ¿Problemas para entrar?{" "}
-  <a href="https://wa.me/527757716024" target="_blank" rel="noreferrer"
+  <a href="https://wa.me/521TUNUMERO" target="_blank" rel="noreferrer"
     style={{color:C.success,fontWeight:700,textDecoration:"none"}}>
     gr3t4
   </a>
@@ -318,7 +319,7 @@ function AdminPanel({ user, onLogout }) {
             <span style={{background:`${C.gold}22`,color:C.gold,border:`1px solid ${C.gold}44`,borderRadius:20,padding:"2px 10px",fontSize:11,fontWeight:700}}>ADMIN</span>
           </div>
           <div style={{display:"flex",alignItems:"center",gap:12}}>
-            <span style={{fontSize:12,color:C.teal}}></span>
+            <span style={{fontSize:12,color:C.teal}}>⚡ Supabase</span>
             <span style={{fontSize:13,color:C.muted}}>👤 {user.name}</span>
             <button className="btn" onClick={onLogout} style={{background:"rgba(239,68,68,0.1)",color:C.danger,border:`1px solid rgba(239,68,68,0.2)`,borderRadius:8,padding:"6px 14px",fontSize:13,fontFamily:"inherit"}}>Salir</button>
           </div>
@@ -1050,24 +1051,30 @@ function RoleBadge({role}){ const t=role==="teacher"; return <span style={{backg
 function GlobalStyles(){ return <style>{`
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  body{background:${C.bg};}
+  html{-webkit-text-size-adjust:100%;}
+  body{background:${C.bg};overflow-x:hidden;width:100%;max-width:100vw;}
   input,select,textarea{outline:none;}
   ::-webkit-scrollbar{width:5px;height:5px;}
   ::-webkit-scrollbar-track{background:${C.surface};}
   ::-webkit-scrollbar-thumb{background:${C.border};border-radius:3px;}
   .btn{cursor:pointer;border:none;transition:all .18s;}
-  .btn:hover{filter:brightness(1.15);transform:translateY(-1px);}
-  .btn:active{transform:translateY(0);filter:brightness(.95);}
-  .inp{background:${C.surface};border:1.5px solid ${C.border};color:${C.text};border-radius:10px;padding:10px 14px;font-size:14px;font-family:inherit;transition:border-color .2s;width:100%;}
+  .btn:hover{filter:brightness(1.1);}
+  .btn:active{filter:brightness(.95);}
+  .inp{background:${C.surface};border:1.5px solid ${C.border};color:${C.text};border-radius:10px;padding:10px 14px;font-size:16px!important;font-family:inherit;transition:border-color .2s;width:100%;}
   .inp:focus{border-color:${C.accent};}
   .inp::placeholder{color:${C.muted};}
   textarea.inp{font-family:inherit;}
   .tab-on{color:${C.text}!important;border-bottom:2px solid ${C.accent}!important;}
-  .row-hover{transition:background .15s,transform .12s;}
-  .row-hover:hover{background:rgba(255,255,255,0.025)!important;transform:translateX(2px);}
-  .chip{cursor:pointer;transition:all .15s;border-radius:8px;padding:6px 14px;font-size:13px;font-weight:600;font-family:inherit;border:1.5px solid;}
-  .chip:hover{transform:scale(1.04);}
+  .row-hover{transition:background .15s;}
+  .row-hover:hover{background:rgba(255,255,255,0.025)!important;}
+  .chip{cursor:pointer;transition:all .15s;border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;font-family:inherit;border:1.5px solid;}
   @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
   @keyframes slideIn{from{opacity:0;transform:translateX(-14px);}to{opacity:1;transform:translateX(0);}}
   @keyframes toastIn{from{opacity:0;transform:translateY(16px) scale(.92);}to{opacity:1;transform:translateY(0) scale(1);}}
+  @media(max-width:640px){
+    main{padding:14px 10px!important;}
+    .btn:hover{transform:none!important;filter:none!important;}
+    .chip{padding:5px 10px!important;font-size:11px!important;}
+    .row-hover:hover{transform:none!important;}
+  }
 `}</style>; }
