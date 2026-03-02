@@ -195,7 +195,13 @@ function AuthScreen({ onLogin }) {
             {busy?"Conectando...":(mode==="login"?"Entrar":"Crear cuenta")}
           </button>
         </div>
-        <div style={{marginTop:16,textAlign:"center",fontSize:12,color:C.muted}}>¿Problemas para entrar? Contacta al administrador.</div>
+        <div style={{marginTop:16,textAlign:"center",fontSize:12,color:C.muted}}>
+  ¿Problemas para entrar?{" "}
+  <a href="https://wa.me/527757716024" target="_blank" rel="noreferrer"
+    style={{color:C.success,fontWeight:700,textDecoration:"none"}}>
+    gr3t4
+  </a>
+</div>
       </div>
     </div>
   );
