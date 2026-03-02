@@ -167,10 +167,10 @@ function AuthScreen({ onLogin }) {
   }
 
   return(
-  <div style={{minHeight:"100vh",background:C.bg,display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'DM Sans',sans-serif",padding:"20px 16px"}}>      <GlobalStyles/>
+  <div style={{minHeight:"100vh",background:C.bg,display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'DM Sans',sans-serif",padding:"12px"}}>      <GlobalStyles/>
       <Glow top="-20%" left="-10%" color="59,130,246"/>
       <Glow bottom="-20%" right="-10%" color="139,92,246"/>
-      <div style={{background:C.card,border:`1px solid ${C.border}`,borderRadius:20,padding:"40px 36px",width:"100%",maxWidth:420,boxShadow:"0 25px 60px rgba(0,0,0,0.4)",position:"relative",zIndex:1,animation:"fadeUp .4s ease both",margin:"0 auto"}}>
+      <div style={{background:C.card,border:`1px solid ${C.border}`,borderRadius:20,padding:"40px 24px",width:"100%",maxWidth:"95vw",boxShadow:"0 25px 60px rgba(0,0,0,0.4)",position:"relative",zIndex:1,animation:"fadeUp .4s ease both",margin:"0 auto"}}>
         <div style={{textAlign:"center",marginBottom:32}}>
           <div style={{fontSize:44}}>📋</div>
           <h1 style={{fontFamily:"'Space Grotesk',sans-serif",fontSize:28,color:C.text,fontWeight:700}}>AsistenciaApp</h1>
