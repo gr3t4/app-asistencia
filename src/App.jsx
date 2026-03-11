@@ -3,12 +3,6 @@
 //  npm install @supabase/supabase-js xlsx
 // ══════════════════════════════════════════════════════════════
 import { useState, useEffect, useRef } from "react";
-import { createClient } from "@supabase/supabase-js";
-import * as XLSX from "xlsx";
-
-const SUPABASE_URL  = import.meta.env.VITE_SUPABASE_URL  || "https://xbxpufhqijgrxlqzthiy.supabase.co";
-const SUPABASE_ANON = import.meta.env.VITE_SUPABASE_ANON_KEY || "sb_publishable_4PwY5ThtKDjcojNjit48TQ_q5-puxm1";
-const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
 
 const C = {
   bg:"#0a0e1a", surface:"#111827", card:"#1a2235", border:"#1e2d45",

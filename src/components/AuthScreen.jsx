@@ -1,3 +1,5 @@
+import sb from "../config/supabase.config";
+
 function AuthScreen({ onLogin }) {
     const [mode,setMode]         = useState("login");
     const [username,setUsername] = useState("");

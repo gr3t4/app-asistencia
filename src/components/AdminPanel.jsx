@@ -1,3 +1,5 @@
+import sb from "../config/supabase.config";
+
 function AdminPanel({ user, onLogout }) {
     const [tab,setTab]               = useState("overview");
     const [users,setUsers]           = useState([]);

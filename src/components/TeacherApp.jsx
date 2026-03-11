@@ -1,3 +1,6 @@
+import * as XLSX from "xlsx";
+import sb from "../config/supabase.config";
+
 function TeacherApp({ user, onLogout }) {
     const [sessions,setSessions]         = useState([]);
     const [activeSession,setActiveSess]  = useState(null);
