@@ -1,3 +1,6 @@
+import { useState } from "react";
+import C from "../config/styles.config";
+
 function JustifyModal({ student, date, currentReason, onSave, onClose }) {
   const [reason, setReason] = useState(currentReason || "");
   const presets = ["Enfermedad / Cita médica","Asunto familiar","Trámite escolar","Accidente o emergencia","Viaje autorizado","Otro motivo"];

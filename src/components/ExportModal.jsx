@@ -1,3 +1,5 @@
+import C from "../config/styles.config";
+
 function ExportModal({ onExport, onClose, hasMultipleDates }) {
   const options = [
     { id:"date",    icon:"📅", label:"Asistencia de hoy",          desc:"Una hoja con el estado de la fecha activa" },

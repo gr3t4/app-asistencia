@@ -1,4 +1,9 @@
+import { useState } from "react";
 import sb from "../config/supabase.config";
+import { setSession } from "../config/session.config";
+import C from "../config/styles.config";
+import { Glow } from "./Utils";
+import { CONTACT_NAME, CONTACT_NUMBER } from "../config/vars.config";
 
 function AuthScreen({ onLogin }) {
     const [mode,setMode]         = useState("login");
@@ -7,6 +12,8 @@ function AuthScreen({ onLogin }) {
     const [name,setName]         = useState("");
     const [error,setError]       = useState("");
     const [busy,setBusy]         = useState(false);
+    const [nameContact] = useState(CONTACT_NAME);
+    const [numberContact] = useState(`https://wa.me/${CONTACT_NUMBER}`);
 
     async function submit() {
         setError(""); setBusy(true);
@@ -31,7 +38,6 @@ function AuthScreen({ onLogin }) {
 
     return(
         <div style={{minHeight:"100vh",background:C.bg,display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'DM Sans',sans-serif",padding:"0"}}>
-        <GlobalStyles/>
         <Glow top="-20%" left="-10%" color="59,130,246"/>
         <Glow bottom="-20%" right="-10%" color="139,92,246"/>
         <div style={{background:C.card,border:"none",borderRadius:0,padding:"40px 28px",width:"100%",maxWidth:"100%",minHeight:"100vh",boxShadow:"none",position:"relative",zIndex:1,animation:"fadeUp .4s ease both",display:"flex",flexDirection:"column",justifyContent:"center"}}>
@@ -60,9 +66,9 @@ function AuthScreen({ onLogin }) {
             </div>
             <div style={{marginTop:16,textAlign:"center",fontSize:12,color:C.muted}}>
     ¿Problemas para entrar?{" "}
-    <a href="https://wa.me/521TUNUMERO" target="_blank" rel="noreferrer"
+    <a href={numberContact} target="_blank" rel="noreferrer"
         style={{color:C.success,fontWeight:700,textDecoration:"none"}}>
-        gr3t4
+        { nameContact }
     </a>
     </div>
         </div>
