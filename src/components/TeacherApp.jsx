@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import * as XLSX from "xlsx";
 import sb from "../config/supabase.config";
 import C from "../config/styles.config";
 import { Toast, Empty } from "./Utils";
 import STATUS from "../config/status.config";
+import { today, fmtDate } from "../config/date.config";
+import { Glow } from "./Utils"; 
+import JustifyModal from "./JustifyModal";
+import AddStudentInline from "./AddStudentsInline";
+import ExportModal from "./ExportModal";
 
 function TeacherApp({ user, onLogout }) {
     const [sessions,setSessions]         = useState([]);
@@ -239,7 +244,6 @@ function TeacherApp({ user, onLogout }) {
   
     return(
       <div style={{minHeight:"100vh",background:C.bg,fontFamily:"'DM Sans',sans-serif",color:C.text}}>
-        <GlobalStyles/>
         <Glow top="-15%" right="-5%" color="59,130,246" size="40vw"/>
         <Glow bottom="-10%" left="-5%" color="139,92,246" size="35vw"/>
         {toast&&<Toast msg={toast}/>}

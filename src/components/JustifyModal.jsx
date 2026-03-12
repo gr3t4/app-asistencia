@@ -1,5 +1,6 @@
 import { useState } from "react";
 import C from "../config/styles.config";
+import { fmtDate } from "../config/date.config";
 
 function JustifyModal({ student, date, currentReason, onSave, onClose }) {
   const [reason, setReason] = useState(currentReason || "");

@@ -1,3 +1,5 @@
+import C from "./styles.config";
+
 const STATUS = {
     present: { label:"Presente",   icon:"✅", color:C.success, short:"P", bg:"#10b98122" },
     absent:  { label:"Ausente",    icon:"❌", color:C.danger,  short:"F", bg:"#ef444422" },

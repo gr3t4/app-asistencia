@@ -1,3 +1,5 @@
+import C from "../config/styles.config";
+
 function Empty({icon,msg}){ return <div style={{textAlign:"center",padding:"60px 0",color:C.muted}}><div style={{fontSize:46,marginBottom:12}}>{icon}</div><p style={{fontSize:14}}>{msg}</p></div>; }
 function Toast({msg}){ return <div style={{position:"fixed",bottom:28,left:"50%",transform:"translateX(-50%)",background:"#1e293b",border:`1px solid ${C.border}`,color:C.text,padding:"12px 24px",borderRadius:12,fontSize:14,fontWeight:500,boxShadow:"0 8px 32px rgba(0,0,0,0.4)",zIndex:1000,animation:"toastIn .3s ease",whiteSpace:"nowrap"}}>{msg}</div>; }
 function Glow({top,bottom,left,right,color,size="45vw"}){ return <div style={{position:"fixed",top,bottom,left,right,width:size,height:size,borderRadius:"50%",background:`radial-gradient(circle,rgba(${color},0.07) 0%,transparent 70%)`,pointerEvents:"none",zIndex:0}}/>; }
