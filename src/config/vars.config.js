@@ -1,0 +1,13 @@
+const SUPABASE_URL  = import.meta.env.VITE_SUPABASE_URL
+const SUPABASE_ANON = import.meta.env.VITE_SUPABASE_PUBLISHABLE_DEFAULT_KEY;
+const SESSION_KEY = import.meta.env.VITE_SESSION_KEY_STORAGE;
+const CONTACT_NUMBER = import.meta.env.VITE_NUMBER_CONTACT;
+const CONTACT_NAME = import.meta.env.VITE_NAME_CONTACT;
+
+export {
+    SUPABASE_ANON,
+    SUPABASE_URL,
+    SESSION_KEY,
+    CONTACT_NAME,
+    CONTACT_NUMBER
+};
